@@ -5,9 +5,9 @@ import {Alert, AlertDescription} from '@/components/ui/alert';
 import {PlusCircle} from 'lucide-react';
 import {ProcessStep} from './ProcessStep';
 import {ViewMode} from './ViewMode';
-import {useProcesses} from '../../hooks/useProcesses';
-import {useParameters} from '../../hooks/useParameters';
-import {useImageUpload} from '../../hooks/useImageUpload';
+import {useProcesses} from '@/hooks/useProcesses.ts';
+import {useParameters} from '@/hooks/useParameters.ts';
+import {useImageUpload} from '@/hooks/useImageUpload.ts';
 import type {ProcessStep as ProcessStepType} from '../../types/process';
 import {LoadingSpinner} from "@/components/common/LoadingSpinner.tsx";
 
@@ -67,8 +67,9 @@ export const ProcessAssemblyApp: React.FC = () => {
 
                 {mode === 'edit' ? (
                     <>
-                        {steps.map((step, index) => (
-                            <ProcessStep
+                        {steps.map((step, index) => {
+                            console.log(`redrawing process step ${step.id}`, step)
+                            return <ProcessStep
                                 key={step.id}
                                 step={step}
                                 index={index}
@@ -77,7 +78,7 @@ export const ProcessAssemblyApp: React.FC = () => {
                                 onAddParameter={addParameter}
                                 onUpdateParameter={updateParameter}
                             />
-                        ))}
+                        })}
                         <Button onClick={addStep} className="w-full">
                             <PlusCircle className="w-4 h-4 mr-2"/>
                             Add Step

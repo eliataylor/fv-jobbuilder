@@ -36,27 +36,25 @@ export const useParameters = (
         stepId: number,
         parameterId: string,
         field: keyof Parameter,
-        value: string | boolean
+        value: any
     ) => {
-        const updatedSteps = steps.map(step => {
-            if (step.id === stepId) {
-                return {
-                    ...step,
-                    parameters: step.parameters.map(param =>
-                        param.id === parameterId
-                            ? {...param, [field]: value}
-                            : param
-                    )
-                };
-            }
-            return step;
-        });
-
-        setSteps(updatedSteps);
-        const stepToUpdate = updatedSteps.find(s => s.id === stepId);
-        if (stepToUpdate) {
-            await onSave(stepToUpdate);
-        }
+        setSteps(prevSteps =>
+            prevSteps.map(step => {
+                if (step.id === stepId) {
+                    const newStep = {
+                        ...step,
+                        parameters: step.parameters.map(param =>
+                            param.id === parameterId
+                                ? {...param, [field]: value}
+                                : param
+                        )
+                    }
+                    onSave(newStep);
+                    return newStep;
+                }
+                return step;
+            })
+        );
     }, [steps, setSteps, onSave]);
 
     return {addParameter, updateParameter};

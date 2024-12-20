@@ -10,12 +10,18 @@ export default defineConfig({
         }
     },
     server: {
-        proxy: {
-            '/api': {
-                target: 'http://localhost:3000',
-                changeOrigin: true,
-                secure: false,
-            }
-        }
+    host: true,  // Expose to all network interfaces
+    strictPort: true,
+    port: 5173,
+    watch: {
+      usePolling: true
+    },
+    proxy: {
+      '/api': {
+        target: 'http://server:3000', // Using Docker service name instead of localhost
+        changeOrigin: true,
+        secure: false,
+      }
     }
+  }
 });

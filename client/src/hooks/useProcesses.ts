@@ -8,7 +8,6 @@ export const useProcesses = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    // @ts-ignore
     const loadProcesses = useCallback(async () => {
         try {
             setLoading(true);

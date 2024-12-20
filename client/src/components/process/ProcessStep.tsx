@@ -6,6 +6,7 @@ import {Textarea} from '@/components/ui/textarea';
 import {ProcessStep as ProcessStepType} from '../../types/process';
 import {ImageUpload} from './ImageUpload';
 import {ParameterForm} from './ParameterForm';
+import {Parameter} from "@/types/parameter.ts";
 
 interface ProcessStepProps {
     step: ProcessStepType;
@@ -13,10 +14,10 @@ interface ProcessStepProps {
     onUpdateStep: (id: number, field: keyof ProcessStepType, value: any) => void;
     onImageUpload: (file: File, stepId: number, monitorNumber: 1 | 2) => void;
     onAddParameter: (stepId: number) => void;
-    onUpdateParameter: (stepId: number, parameterId: string, field: string, value: any) => void;
+    onUpdateParameter: (stepId: number, parameterId: string, field: keyof Parameter, value: any) => void;
 }
 
-export const ProcessStep: React.FC<ProcessStepProps> = ({
+export const ProcessStep: React.FC<ProcessStepProps> = React.memo(({
                                                             step,
                                                             index,
                                                             onUpdateStep,
@@ -56,4 +57,4 @@ export const ProcessStep: React.FC<ProcessStepProps> = ({
             />
         </CardContent>
     </Card>
-);
+));

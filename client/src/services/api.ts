@@ -1,7 +1,7 @@
 // src/services/api.ts
 import {ProcessStep} from '../types/process';
 
-const API_BASE_URL = '/api';
+const API_BASE_URL = `/api`;
 
 class APIError extends Error {
     constructor(message: string, public status?: number) {
