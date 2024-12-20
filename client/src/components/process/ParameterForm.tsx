@@ -7,7 +7,7 @@ import {Label} from '@/components/ui/label';
 import {Switch} from '@/components/ui/switch';
 import {Select, SelectContent, SelectItem, SelectTrigger, SelectValue} from '@/components/ui/select';
 import {Plus, Trash2} from 'lucide-react';
-import {ProcessStep} from '@/types/process.ts';
+import {ProcessStep} from '@/types';
 
 interface ParameterFormProps {
     step: ProcessStep;

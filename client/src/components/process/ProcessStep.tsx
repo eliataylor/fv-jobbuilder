@@ -3,10 +3,9 @@ import React from 'react';
 import {Card, CardContent, CardHeader, CardTitle} from '@/components/ui/card';
 import {Input} from '@/components/ui/input';
 import {Textarea} from '@/components/ui/textarea';
-import {ProcessStep as ProcessStepType} from '../../types/process';
+import {Parameter, ProcessStep as ProcessStepType} from '../../types';
 import {ImageUpload} from './ImageUpload';
 import {ParameterForm} from './ParameterForm';
-import {Parameter} from "@/types/parameter.ts";
 
 interface ProcessStepProps {
     step: ProcessStepType;

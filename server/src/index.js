@@ -4,7 +4,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
-import itemRoutes from './routes/items.js';
+import projectRoutes from './routes/routes.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
 dotenv.config();
@@ -18,7 +18,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 // Routes
-app.use('/api/items', itemRoutes);
+app.use('/api', projectRoutes);
 
 // Error handling
 app.use(errorHandler);

@@ -3,7 +3,7 @@ import React from 'react';
 import {Button} from '@/components/ui/button';
 import {Label} from '@/components/ui/label';
 import {Monitor} from 'lucide-react';
-import {ProcessStep} from '../../types/process';
+import {ProcessStep} from '../../types';
 
 interface ImageUploadProps {
     step: ProcessStep;

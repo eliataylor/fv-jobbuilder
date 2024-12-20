@@ -1,7 +1,7 @@
 // src/hooks/useProcesses.ts
 import {useCallback, useEffect, useState} from 'react';
-import {ProcessStep} from '../types/process';
-import {api} from '../services/api';
+import {ProcessStep} from '@/types';
+import {api} from '../services/api-old';
 
 export const useProcesses = () => {
     const [steps, setSteps] = useState<ProcessStep[]>([]);

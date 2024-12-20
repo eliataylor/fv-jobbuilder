@@ -8,7 +8,7 @@ import {ViewMode} from './ViewMode';
 import {useProcesses} from '@/hooks/useProcesses.ts';
 import {useParameters} from '@/hooks/useParameters.ts';
 import {useImageUpload} from '@/hooks/useImageUpload.ts';
-import type {ProcessStep as ProcessStepType} from '../../types/process';
+import type {ProcessStep as ProcessStepType} from '../../types';
 import {LoadingSpinner} from "@/components/common/LoadingSpinner.tsx";
 
 

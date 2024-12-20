@@ -1,6 +1,6 @@
 // src/hooks/useImageUpload.ts
 import {useCallback} from 'react';
-import {ProcessStep} from '../types/process';
+import {ProcessStep} from '../types';
 import {imageUploadService} from "@/services/imageUpload.ts";
 
 export const useImageUpload = (
