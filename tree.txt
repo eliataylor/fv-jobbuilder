@@ -1,0 +1,86 @@
+jobbuilder/
+├── .env
+├── .gitignore
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+├── index.html
+│
+├── public/
+│   ├── favicon.ico
+│   └── assets/
+│
+├── src/
+│   ├── main.tsx
+│   ├── App.tsx
+│   ├── vite-env.d.ts
+│   │
+│   ├── components/
+│   │   ├── ui/                    # Shadcn UI components
+│   │   │   ├── button.tsx
+│   │   │   ├── card.tsx
+│   │   │   ├── input.tsx
+│   │   │   └── ...
+│   │   │
+│   │   ├── process/              # Process-specific components
+│   │   │   ├── ProcessAssemblyApp.tsx
+│   │   │   ├── ProcessStep.tsx
+│   │   │   ├── ParameterForm.tsx
+│   │   │   ├── StepNavigation.tsx
+│   │   │   └── ImageUpload.tsx
+│   │   │
+│   │   └── common/               # Shared components
+│   │       ├── Layout.tsx
+│   │       ├── ErrorBoundary.tsx
+│   │       ├── LoadingSpinner.tsx
+│   │       └── ErrorAlert.tsx
+│   │
+│   ├── hooks/
+│   │   ├── useProcesses.ts       # Custom hook for process management
+│   │   ├── useParameters.ts
+│   │   └── useImageUpload.ts
+│   │
+│   ├── services/
+│   │   ├── api.ts               # API service functions
+│   │   └── imageUpload.ts       # Image upload service
+│   │
+│   ├── types/
+│   │   ├── process.ts           # Process-related types
+│   │   ├── parameter.ts
+│   │   └── api.ts              # API response types
+│   │
+│   ├── utils/
+│   │   ├── validation.ts
+│   │   ├── formatters.ts
+│   │   └── constants.ts
+│   │
+│   ├── context/
+│   │   └── ProcessContext.tsx   # Global process state management
+│   │
+│   └── styles/
+│       ├── globals.css
+│       └── tailwind.css
+│
+├── server/                      # Backend Express.js + MongoDB
+│   ├── index.js
+│   ├── routes/
+│   │   └── items.js
+│   │
+│   ├── models/
+│   │   └── Item.js
+│   │
+│   ├── middleware/
+│   │   ├── errorHandler.js
+│   │   └── auth.js
+│   │
+│   └── config/
+│       └── database.js
+│
+└── tests/
+    ├── components/
+    │   └── ProcessAssemblyApp.test.tsx
+    │
+    ├── hooks/
+    │   └── useProcesses.test.ts
+    │
+    └── setup.ts
