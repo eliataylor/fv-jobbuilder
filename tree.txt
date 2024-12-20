@@ -16,38 +16,38 @@ jobbuilder/
 │   ├── vite-env.d.ts
 │   │
 │   ├── components/
-│   │   ├── ui/                    # Shadcn UI components
+│   │   ├── ui/
 │   │   │   ├── button.tsx
 │   │   │   ├── card.tsx
 │   │   │   ├── input.tsx
 │   │   │   └── ...
 │   │   │
-│   │   ├── process/              # Process-specific components
+│   │   ├── process/
 │   │   │   ├── ProcessAssemblyApp.tsx
 │   │   │   ├── ProcessStep.tsx
 │   │   │   ├── ParameterForm.tsx
 │   │   │   ├── StepNavigation.tsx
 │   │   │   └── ImageUpload.tsx
 │   │   │
-│   │   └── common/               # Shared components
+│   │   └── common/
 │   │       ├── Layout.tsx
 │   │       ├── ErrorBoundary.tsx
 │   │       ├── LoadingSpinner.tsx
 │   │       └── ErrorAlert.tsx
 │   │
 │   ├── hooks/
-│   │   ├── useProcesses.ts       # Custom hook for process management
+│   │   ├── useProcesses.ts
 │   │   ├── useParameters.ts
 │   │   └── useImageUpload.ts
 │   │
 │   ├── services/
-│   │   ├── api.ts               # API service functions
-│   │   └── imageUpload.ts       # Image upload service
+│   │   ├── api.ts
+│   │   └── imageUpload.ts
 │   │
 │   ├── types/
-│   │   ├── process.ts           # Process-related types
+│   │   ├── process.ts
 │   │   ├── parameter.ts
-│   │   └── api.ts              # API response types
+│   │   └── api.ts
 │   │
 │   ├── utils/
 │   │   ├── validation.ts
@@ -55,13 +55,13 @@ jobbuilder/
 │   │   └── constants.ts
 │   │
 │   ├── context/
-│   │   └── ProcessContext.tsx   # Global process state management
+│   │   └── ProcessContext.tsx
 │   │
 │   └── styles/
 │       ├── globals.css
 │       └── tailwind.css
 │
-├── server/                      # Backend Express.js + MongoDB
+├── server/
 │   ├── index.js
 │   ├── routes/
 │   │   └── items.js

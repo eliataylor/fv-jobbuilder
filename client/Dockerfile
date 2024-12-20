@@ -1,5 +1,5 @@
 # Build stage
-FROM node:18-alpine as build
+FROM node:18-alpine AS build
 
 WORKDIR /app
 COPY package*.json ./
@@ -7,12 +7,20 @@ RUN npm install
 COPY . .
 RUN npm run build
 
+# Development stage
+FROM node:18-alpine AS development
+
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+
 EXPOSE 5173
 CMD ["npm", "run", "dev"]
 
 # Production stage
-# FROM nginx:alpine as production
+FROM nginx:alpine AS production
 
-#COPY --from=build /app/dist /usr/share/nginx/html
-#EXPOSE 80
-#CMD ["nginx", "-g", "daemon off;"]
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
